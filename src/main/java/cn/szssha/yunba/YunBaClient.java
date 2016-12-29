@@ -6,8 +6,8 @@ import cn.szssha.yunba.model.OptionsModel;
 import cn.szssha.yunba.task.PublishTask;
 import cn.szssha.yunba.util.MessageBody;
 import cn.szssha.yunba.util.PublishType;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by mirsery on 28/12/2016.
  */
-class YunBaClient {
+public class YunBaClient {
 
     private static String url = "";
 
@@ -25,7 +25,7 @@ class YunBaClient {
 
     private static MessageBody messageBody = null;
 
-    //private static Logger logger = LoggerFactory.getLogger(YunBaClient.class);
+    private static Logger logger = LoggerFactory.getLogger(YunBaClient.class);
 
     public YunBaClient(String url, String appKey, String seckey) {
         this.url = url;
@@ -36,8 +36,8 @@ class YunBaClient {
 
     private void Publish(final String message, final PublishListener listener) {
 
-//        logger.info("The url is " + url);
-//        logger.info("message boday is " + message);
+        logger.info("The url is " + url);
+        logger.info("message boday is " + message);
 
         new Thread(new Runnable() {
             public void run() {
